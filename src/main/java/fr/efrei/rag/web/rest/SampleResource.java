@@ -1,5 +1,6 @@
 package fr.efrei.rag.web.rest;
 
+import fr.efrei.rag.web.rest.dto.Sample;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -10,8 +11,8 @@ public class SampleResource {
         return "Hello " + value + "!";
     }
 
-//    @GetMapping("/samples/dto/{value}")
-//    public Sample helloJson(@PathVariable(value = "value", required = false) final String value) {
-//        return new Sample(value: "Hello " + value + "!");
-//    }
+    @GetMapping("/samples/dto/{value}")
+    public Sample helloJson(@PathVariable(value = "value", required = false) final String value) {
+        return new Sample("Hello " + value + "!");
+    }
 }
